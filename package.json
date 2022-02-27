@@ -1,0 +1,50 @@
+{
+  "name": "book-store-v2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/api-graphql": "^2.2.17",
+    "@aws-amplify/datastore": "^2.10.1",
+    "@aws-amplify/ui-components": "^1.9.6",
+    "@aws-amplify/ui-react": "^2.1.4",
+    "@aws-amplify/ui-react-v1": "npm:@aws-amplify/ui-react@^1.2.9",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.7.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "antd": "^4.17.3",
+    "aws-amplify": "^4.3.10",
+    "nanoid": "^3.1.30",
+    "react": "^16.13.1",
+    "react-awesome-slider": "^4.1.0",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.8.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-stripe-elements": "^6.0.1",
+    "stripe": "^8.68.0",
+    "uuid": "^8.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

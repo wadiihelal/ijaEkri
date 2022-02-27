@@ -1,0 +1,91 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bookstorev2-dev-00731-authRole",
+      "UnauthRoleArn": "arn:aws:iam::422826396438:role/amplify-bookstorev2-dev-00731-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::422826396438:role/amplify-bookstorev2-dev-00731-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-bookstorev2-dev-00731-deployment",
+      "UnauthRoleName": "amplify-bookstorev2-dev-00731-unauthRole",
+      "StackName": "amplify-bookstorev2-dev-00731",
+      "StackId": "arn:aws:cloudformation:us-east-2:422826396438:stack/amplify-bookstorev2-dev-00731/29e35d40-3e8d-11ec-9299-02a519ad88b8",
+      "AmplifyAppId": "d1k0jp2x80b16m"
+    }
+  },
+  "auth": {
+    "bookstorev2fd0749a1": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "loginMechanisms": [
+          "PREFERRED_USERNAME"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      }
+    }
+  },
+  "storage": {
+    "BookImages": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "function": {
+    "processPayment": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "createOrder": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "api": {
+    "bookstorev2": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authbookstorev2fd0749a1"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 365,
+                "description": "Guest user acces to books"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "service": "S3AndCloudFront",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
